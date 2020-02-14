@@ -6,54 +6,60 @@ At least two classes are required: `Company` and `Service`.
 
 - Company
 
-        <?php
-        declare(strict_types=1);
-    
-        class PcComponentes extends \PcComponentes\TopicGenerator\Company
-        {
-            private const COMPANY_NAME = 'pccomponentes';
-        
-            public function name(): string
-            {
-                return self::COMPANY_NAME;
-            }
-        }
-
-- Service
-
-        <?php
-        declare(strict_types=1);
-        
-        class Picking extends \PcComponentes\TopicGenerator\Service
-        {
-            private const SERVICE_NAME = 'picking';
-        
-            public function name(): string
-            {
-                return self::SERVICE_NAME;
-            }
-        }
-
-Then the messages would be generated in this way:
-
+    ```php
     <?php
     declare(strict_types=1);
     
-    $version = 1;
-    $type = 'command';
-    $resource = 'parcel';
-    $name = 'register';
+    class PcComponentes extends \PcComponentes\TopicGenerator\Company
+    {
+        private const COMPANY_NAME = 'pccomponentes';
     
-    $topic = \PcComponentes\TopicGenerator\Topic::generate(
-        PcComponentes::instance(),
-        Picking::instance(),
-        $version,
-        $type,
-        $resource,
-        $name
-    );
+        public function name(): string
+        {
+            return self::COMPANY_NAME;
+        }
+    }
+    ```
+
+- Service
+
+    ```php
+    <?php
+    declare(strict_types=1);
     
-    echo $topic;
+    class Picking extends \PcComponentes\TopicGenerator\Service
+    {
+        private const SERVICE_NAME = 'picking';
+    
+        public function name(): string
+        {
+            return self::SERVICE_NAME;
+        }
+    }
+    ```
+
+Then the messages would be generated in this way:
+
+```php
+<?php
+declare(strict_types=1);
+
+$version = 1;
+$type = 'command';
+$resource = 'parcel';
+$name = 'register';
+
+$topic = \PcComponentes\TopicGenerator\Topic::generate(
+    PcComponentes::instance(),
+    Picking::instance(),
+    $version,
+    $type,
+    $resource,
+    $name
+);
+
+echo $topic;
+```
 
 The result would be this:
 
