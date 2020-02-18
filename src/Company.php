@@ -5,7 +5,7 @@ namespace PcComponentes\TopicGenerator;
 
 abstract class Company
 {
-    private static Company $instance;
+    private static ?Company $instance = null;
 
     public static function instance(): Company
     {
