@@ -5,7 +5,7 @@ namespace PcComponentes\TopicGenerator;
 
 abstract class Service
 {
-    private static Service $instance;
+    private static ?Service $instance = null;
 
     public static function instance(): Service
     {
