@@ -3,17 +3,11 @@ declare(strict_types=1);
 
 namespace PcComponentes\TopicGenerator;
 
-abstract class Service
+abstract class Service extends ClassAsKeyMultiton
 {
-    private static ?Service $instance = null;
-
     public static function instance(): Service
     {
-        if (null === static::$instance) {
-            static::$instance = new static();
-        }
-
-        return static::$instance;
+        return parent::instance();
     }
 
     abstract public function name(): string;
