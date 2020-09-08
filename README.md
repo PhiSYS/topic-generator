@@ -1,7 +1,17 @@
 # Topic Generator
+
 This is a helper that standardizes topic generation in messages (commands and events).
 
-## Use
+## Installation
+
+1) Install via [composer](https://getcomposer.org/)
+
+    ```shell script
+    composer require pccomponentes/topic-generator
+    ```
+
+## Usage
+
 At least two classes are required: `Company` and `Service`.
 
 - Company
@@ -44,7 +54,7 @@ Then the messages would be generated in this way:
 <?php
 declare(strict_types=1);
 
-$version = 1;
+$version = '1';
 $type = 'command';
 $resource = 'parcel';
 $name = 'register';

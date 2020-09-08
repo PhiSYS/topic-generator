@@ -10,6 +10,7 @@ abstract class ClassAsKeyMultiton
     protected static function instance(): self
     {
         $key = static::class;
+
         if (false === \array_key_exists($key, self::$instances)) {
             static::$instances[$key] = new static();
         }

@@ -8,7 +8,7 @@ final class Topic
     public static function generate(
         Company $company,
         Service $service,
-        int $version,
+        string $version,
         string $type,
         string $resource,
         string $name
@@ -22,7 +22,7 @@ final class Topic
                 $type,
                 $resource,
                 $name,
-            ]
+            ],
         );
     }
 }
