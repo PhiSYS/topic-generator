@@ -15,7 +15,7 @@
     }
   },
   "require": {
-    "php": "^7.4"
+    "php": "^7.4|^8"
   },
   "require-dev": {
     "pccomponentes/coding-standard": "^1.2"
